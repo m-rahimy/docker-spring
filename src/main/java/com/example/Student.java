@@ -1,15 +1,10 @@
 package com.example;
 
-import jdk.jfr.Enabled;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import java.io.Serializable;
 import java.time.LocalDate;
 
-@SuppressWarnings("serial")
-@Entity
-public class Student implements Serializable, Cloneable {
+public class Student {
 
     @Id
     public String id;
