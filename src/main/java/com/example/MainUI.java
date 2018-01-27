@@ -12,6 +12,7 @@ public class MainUI extends UI {
     private static final long serialVersionUID = 1L;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+	
         setContent(new Label("Hello World from Vaadin!"));
     }
 }
