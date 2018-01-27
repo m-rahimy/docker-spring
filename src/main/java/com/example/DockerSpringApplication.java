@@ -16,6 +16,8 @@ public class DockerSpringApplication implements CommandLineRunner {
 	@Autowired
 	PersonRepository personRepository;
 
+	@Autowired
+	StudentRepository studentRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DockerSpringApplication.class, args);
@@ -59,5 +61,7 @@ public class DockerSpringApplication implements CommandLineRunner {
 		for (Person p : personRepository.findAll()){
 			System.out.println(p);
 		}
+
+		studentRepository.save(new Student("مجتبی", "رحیمی"));
 	}
 }
