@@ -5,6 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 @SpringBootApplication
@@ -62,6 +65,7 @@ public class DockerSpringApplication implements CommandLineRunner {
             System.out.println(p);
         }
 
-        studentRepository.save(new Student("مجتبی", "رحیمی"));
+        studentRepository.save(new Student(null,"مجتبی", "رحیمی", LocalDate.now(), "moj.rah@g.com"));
+
     }
 }
