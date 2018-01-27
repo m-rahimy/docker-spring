@@ -29,7 +29,11 @@ public class StudentUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
 
         final VerticalLayout layout = new VerticalLayout();
-        HorizontalLayout horizontalLayout = new HorizontalLayout(grid, studentForm);
+        HorizontalLayout main = new HorizontalLayout(grid, studentForm);
+        main.setSpacing(true);
+        main.setSizeFull();
+        grid.setSizeFull();
+        main.setExpandRatio(grid, 1);
         filterText.setInputPrompt("filter by name...");
         filterText.addTextChangeListener(e -> {
             updateList(new Student("", e.getText(), e.getText(),
@@ -50,7 +54,7 @@ public class StudentUI extends UI {
         filtering.addComponents(filterText, clearFilterTextBtn);
         filtering.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
-        layout.addComponent(grid);
+        layout.addComponents(filtering, main);
 
         updateList(null);
 
